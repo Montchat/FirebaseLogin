@@ -1,7 +1,26 @@
 import React from 'react';
 import { StyleSheet, ScrollView, View,Text, Button, TextInput} from 'react-native';
 
-export default function Login() {
+export default class Login extends Component {
+
+  state = {
+    email: '', password: ''
+  }
+
+  onChangeText = (key, val) => {
+    this.setState({ [key]: val })
+  }
+
+  signUp = async () => {
+    const { email, password } = this.state;
+    console.log('email: ', email);
+    console.log('password: ', password)
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(() => console.log('successfully created account'))
+    .catch(error => console.log(error))
+}
+
+render() {
   return (
     <ScrollView>
       <View style={styles.login}>
@@ -28,7 +47,9 @@ export default function Login() {
         </Button>
       </View>
     </ScrollView>
-  )
+  );
+}
+
 }
 
 const styles = StyleSheet.create({
