@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { View, Button, StyleSheet } from 'react-native';
+import { View, Button, StyleSheet, Text } from 'react-native';
 
-export class Home extends Component {
+export default function Home() {
 
-  render() {
     return (
       <View style = {styles.view}>
         <Text>welcome to firebase login</Text>
@@ -19,9 +18,6 @@ export class Home extends Component {
         />
       </View>
     );
-
-  }
-
 }
 
 const styles = StyleSheet.create({
