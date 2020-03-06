@@ -1,7 +1,26 @@
-import React from 'react';
-import { StyleSheet, ScrollView, View,Text, Button, TextInput} from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, ScrollView, View, Text, Button, TextInput} from 'react-native';
 
-export default function SignUp() {
+export default class SignUp extends Component {
+
+  state = {
+    email: '', password: ''
+  }
+
+  onChangeText = (key, val) => {
+    this.setState({ [key]: val })
+  }
+
+  signUp = async () => {
+    const { email, password } = this.state;
+    console.log('email: ', email);
+    console.log('password: ', password)
+    
+
+  }
+
+  render() {
+
   return (
     <ScrollView>
       <View style={styles.login}>
@@ -11,22 +30,26 @@ export default function SignUp() {
         <TextInput style={styles.email}
           autoCompleteType='email'
           placeholder="enter your email"
+          onChangeText={val => this.onChangeText('email', val)}
         >
         </TextInput>
         <TextInput style={styles.password}
           autoCompleteType='password'
           placeholder="enter your password"
           secureTextEntry={true}
+          onChangeText={val => this.onChangeText('password', val)}
           >
         </TextInput>
         <View style={styles.body}>
-
         </View>
-        <Button title = "sign up">
+        <Button title = "sign up"
+        onPress={this.signUp}
+        >
         </Button>
       </View>
     </ScrollView>
-  )
+  );
+}
 }
 
 const styles = StyleSheet.create({
@@ -60,7 +83,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginVertical: 8,
     borderRadius: 4,
-    height: 44
+    height: 44,
 
   },
 
