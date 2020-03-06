@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, ScrollView, View, Text, Button, TextInput} from 'react-native';
+import firebase from 'react-native-firebase';
 
 export default class SignUp extends Component {
 
@@ -15,8 +16,10 @@ export default class SignUp extends Component {
     const { email, password } = this.state;
     console.log('email: ', email);
     console.log('password: ', password)
-
-  }
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(() => console.log('successfully created account'))
+    .catch(error => console.log(error))
+}
 
 //TODO: Add logic for warnings for invalid email and password
 //TODO: Add async view for sign up

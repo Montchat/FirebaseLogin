@@ -20,6 +20,7 @@
 		2DCD954D1E0B4F2C00145EB5 /* FirebaseLoginTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* FirebaseLoginTests.m */; };
 		A1049412B53A50A628C9362D /* libPods-FirebaseLoginTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 473EC91C1D4E8DDDD8EE8CD2 /* libPods-FirebaseLoginTests.a */; };
 		D2914E57F62BFD65B7079CE7 /* libPods-FirebaseLogin-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC3112283DAD5C71AD4B001 /* libPods-FirebaseLogin-tvOSTests.a */; };
+		D839655C2412F37F000DFFFC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D839655B2412F37F000DFFFC /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		B0B40ED7DEFBC9F96842EDF4 /* Pods-FirebaseLogin-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseLogin-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseLogin-tvOSTests/Pods-FirebaseLogin-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BA121A3C0CB04FFCB43919AE /* Pods-FirebaseLogin-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseLogin-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-FirebaseLogin-tvOSTests/Pods-FirebaseLogin-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		BCE2FDDD3C593C7FB662AFE7 /* libPods-FirebaseLogin-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FirebaseLogin-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D839655B2412F37F000DFFFC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD13EC991B2CDE5AA839111D /* Pods-FirebaseLogin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseLogin.debug.xcconfig"; path = "Target Support Files/Pods-FirebaseLogin/Pods-FirebaseLogin.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -131,6 +133,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
+				D839655B2412F37F000DFFFC /* GoogleService-Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = FirebaseLogin;
@@ -194,7 +197,6 @@
 				9AACFB41BD9329998D3F4B18 /* Pods-FirebaseLoginTests.debug.xcconfig */,
 				F46CF348C88264523E47A30D /* Pods-FirebaseLoginTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -230,6 +232,7 @@
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				32106FAC4E975A85D6508D29 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,6 +311,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -338,6 +342,7 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				D839655C2412F37F000DFFFC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +391,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		32106FAC4E975A85D6508D29 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FirebaseLogin/Pods-FirebaseLogin-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++/gRPCCertificates-Cpp.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/gRPCCertificates-Cpp.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FirebaseLogin/Pods-FirebaseLogin-resources.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		927271F5266F9C194B0C5B54 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
