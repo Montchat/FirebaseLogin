@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import { View, Button, StyleSheet, Text } from 'react-native';
 
-export default function Home() {
+export default function Home({ navigation }) {
+
+const login = () => {
+  navigation.push('Login');
+
+}
+
+const signup = () => {
+  navigation.push('SignUp');
+
+}
 
     return (
       <View style = {styles.view}>
@@ -9,12 +19,12 @@ export default function Home() {
         <Button
           style={styles.button}
           title = 'login'
-          onPress={this._login}
+          onPress={login}
         />
         <Button
           style={styles.button}
           title = 'signup'
-          onPress={this._signUp}
+          onPress={signup}
         />
       </View>
     );
