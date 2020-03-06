@@ -19,8 +19,7 @@ export default function Login() {
           secureTextEntry={true}
           >
         </TextInput>
-        <View style={styles.body}>
-        </View>
+        <View style={styles.body}></View>
         <Button
           style={styles.button}
           title = "Forgot Password?">

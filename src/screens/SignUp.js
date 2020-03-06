@@ -15,9 +15,11 @@ export default class SignUp extends Component {
     const { email, password } = this.state;
     console.log('email: ', email);
     console.log('password: ', password)
-    
 
   }
+
+//TODO: Add logic for warnings for invalid email and password
+//TODO: Add async view for sign up
 
   render() {
 
@@ -29,12 +31,14 @@ export default class SignUp extends Component {
         </View>
         <TextInput style={styles.email}
           autoCompleteType='email'
+          autoCapitalize='none'
           placeholder="enter your email"
           onChangeText={val => this.onChangeText('email', val)}
         >
         </TextInput>
         <TextInput style={styles.password}
           autoCompleteType='password'
+          autoCapitalize='none'
           placeholder="enter your password"
           secureTextEntry={true}
           onChangeText={val => this.onChangeText('password', val)}
