@@ -4,9 +4,11 @@ import React, {
 import { View, Text, Button, StyleSheet } from 'react-native';
 import Navigator from './src/routes/LoginStack';
 
-function App() {
+export default class App extends Component {
+  render() {
     return (
       <Navigator />
+
     );
+  }
 }
-export default App;

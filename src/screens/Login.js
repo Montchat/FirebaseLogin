@@ -8,14 +8,13 @@ export default class Login extends Component {
   }
 
   onChangeText = (key, val) => {
-    this.setState({ [key]: val })
+    this.setState({[key]: val })
   }
 
   signUp = async () => {
     const { email, password } = this.state;
     console.log('email: ', email);
-    console.log('password: ', password)
-    firebase.auth().logi
+    console.log('password: ', password);
 }
 
 render() {
