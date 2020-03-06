@@ -1,4 +1,4 @@
-import React { Component } from 'react';
+import React, { Component } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 
 export default class Loading extends Component {
@@ -10,8 +10,7 @@ export default class Loading extends Component {
       </View>
 
     );
-  }
-
+  };
 }
 
 const styles = StyleSheet.create({
