@@ -15,9 +15,7 @@ export default class Login extends Component {
     const { email, password } = this.state;
     console.log('email: ', email);
     console.log('password: ', password)
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() => console.log('successfully created account'))
-    .catch(error => console.log(error))
+    firebase.auth().logi
 }
 
 render() {
