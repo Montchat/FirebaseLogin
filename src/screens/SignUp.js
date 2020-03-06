@@ -12,6 +12,7 @@ export default function Login() {
 const styles = StyleSheet.create({
   signUp: {
     backgroundColor: 'blue',
+    flex: 1
   }
 
 });
