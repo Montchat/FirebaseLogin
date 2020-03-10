@@ -1,9 +1,12 @@
-import React { Component } from 'react';
+import React, { Component } from 'react';
 import AsyncStorage from '@react-native-community/async-storage';
-import firebase from firebase;
+import firebase from 'react-native-firebase';
+import { createAppContainer, createSwitchNavigator } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack';
 import Main from './src/screens/Main';
 import Home from './src/screens/Home';
-import Login from '.src/screens/Login';
+import Login from './src/screens/Login';
+import SignUp from './src/screens/SignUp';
 
 const AuthContext = React.createContext();
 
@@ -12,26 +15,18 @@ const MainStack = createStackNavigator({
 
 });
 
-export default class App extends React.Component {
-  state = {loggedIn: null}
-  componentDidMount() {
-    firebase.initialzeApp();
+const LoginStack = createStackNavigator({
+  Home: Home,
+  Login: Login,
+  SignUp: SignUp
 
-    firebase.auth().onAuthStateChange((user)) => {
-      if (user) {
-        this.setState({ loggedIn: true })
-      } else {
-        this.setState({ loggedIn: false })
-      }
-    }
-  }
-};
+});
 
 export default createAppContainer(
   createSwitchNavigator( {
     Loading: "Loading",
-    Home: "Home",
-    Login: "Login"
+    Main: MainStack,
+    Login: LoginStack
   }, {
     initialRoutingName: "Loading"
   })
