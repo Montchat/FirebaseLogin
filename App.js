@@ -7,6 +7,7 @@ import Main from './src/screens/Main';
 import Home from './src/screens/Home';
 import Login from './src/screens/Login';
 import SignUp from './src/screens/SignUp';
+import Loading from './src/screens/Loading';
 
 const AuthContext = React.createContext();
 
@@ -24,10 +25,10 @@ const LoginStack = createStackNavigator({
 
 export default createAppContainer(
   createSwitchNavigator( {
-    Loading: "Loading",
+    Loading: Loading,
     Main: MainStack,
     Login: LoginStack
   }, {
-    initialRoutingName: "Loading"
+    initialRouteName: "Loading"
   })
 );
